@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Core Colors */
+    --color-background: #FAFAFA; /* warm off-white */
+    --color-foreground: #1E293B; /* rich charcoal */
+    --color-card: #FFFFFF; /* pure white */
+    --color-card-foreground: #1E293B; /* rich charcoal */
+    --color-popover: #FFFFFF; /* pure white */
+    --color-popover-foreground: #1E293B; /* rich charcoal */
+    --color-muted: #F1F5F9; /* light gray */
+    --color-muted-foreground: #64748B; /* muted gray */
+    --color-border: #E2E8F0; /* light border */
+    --color-input: #FFFFFF; /* pure white */
+    --color-ring: #1E40AF; /* deep professional blue */
+
+    /* Brand Colors */
+    --color-primary: #1E40AF; /* deep professional blue */
+    --color-primary-foreground: #FFFFFF; /* white */
+    --color-secondary: #64748B; /* sophisticated slate gray */
+    --color-secondary-foreground: #FFFFFF; /* white */
+    --color-accent: #0EA5E9; /* vibrant sky blue */
+    --color-accent-foreground: #FFFFFF; /* white */
+
+    /* Status Colors */
+    --color-success: #059669; /* professional emerald */
+    --color-success-foreground: #FFFFFF; /* white */
+    --color-warning: #D97706; /* authoritative amber */
+    --color-warning-foreground: #FFFFFF; /* white */
+    --color-error: #DC2626; /* clear crimson */
+    --color-error-foreground: #FFFFFF; /* white */
+    --color-destructive: #DC2626; /* clear crimson */
+    --color-destructive-foreground: #FFFFFF; /* white */
+
+    /* Typography */
+    --font-heading: 'Inter', sans-serif;
+    --font-body: 'Inter', sans-serif;
+    --font-caption: 'Inter', sans-serif;
+    --font-data: 'JetBrains Mono', monospace;
+
+    /* Shadows */
+    --shadow-card: 0 1px 3px rgba(0, 0, 0, 0.1);
+    --shadow-modal: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+    /* Border Radius */
+    --radius-interactive: 6px;
+    --radius-container: 4px;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-body);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+  }
+
+  .font-data {
+    font-family: var(--font-data);
+  }
+}
+
+@layer components {
+  .card-shadow {
+    box-shadow: var(--shadow-card);
+  }
+
+  .modal-shadow {
+    box-shadow: var(--shadow-modal);
+  }
+
+  .transition-smooth {
+    transition: all 200ms ease-out;
+  }
+
+  .transition-hover {
+    transition: all 150ms ease-in-out;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .transition-smooth,
+    .transition-hover {
+      transition: none;
+    }
+  }
+}
